@@ -12,7 +12,11 @@
 				</ContentPage.Padding>
 				<StackLayout>
 					<Label Text="{Binding Name}" FontSize="Medium" HorizontalOptions="Center" />
-					<BoxView Color="{Binding Color}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+					<BoxView Color="{Binding Color}" WidthRequest="200" HeightRequest="200" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+						<BoxView.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="{Binding Id}" />
+						</BoxView.GestureRecognizers>
+					</BoxView>
 				</StackLayout>
 			</ContentPage>
 		</DataTemplate>
